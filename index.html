@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Уравнение и вклад</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        .bar { width: 40px; border: 1px solid #333; }
+        .bar-old { height: 100px; background: #d9534f; }
+        .bar-new { height: 0; background: #28a745; transition: height .2s ease; }
+        td { vertical-align: bottom; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="display-2 text-center">Квадратное уравнение: ax<sup>2</sup> + bx + c = 0</h1>
+</div>
+
+<main class="container my-5">
+    <section class="row mb-5">
+        <div class="col-md-4">
+            <img class="img-fluid" src="https://yagubov.ru/_bd/92/38355674.jpg" alt="Формула">
+        </div>
+
+        <div class="col-md-4">
+            <form onsubmit="square(); return false;">
+                <label class="form-label" for="A">a</label>
+                <input class="form-control mb-2" type="number" step="any" id="A">
+
+                <label class="form-label" for="B">b</label>
+                <input class="form-control mb-2" type="number" step="any" id="B">
+
+                <label class="form-label" for="C">c</label>
+                <input class="form-control mb-2" type="number" step="any" id="C">
+
+                <button class="btn btn-primary" type="submit">Найти корни</button>
+            </form>
+        </div>
+
+        <div class="col-md-4">
+            <h3>Ответ</h3>
+            <div id="korni"></div>
+        </div>
+    </section>
+
+    <section class="row">
+        <div class="col-md-5">
+            <h3>Вклад</h3>
+            <form name="calculator">
+                <label class="form-label" for="money">Начальная сумма</label>
+                <input class="form-control mb-2" type="number" id="money" name="money" value="10000">
+
+                <label class="form-label" for="months">Срок</label>
+                <select class="form-select mb-2" id="months" name="months">
+                    <option value="3">3 месяца</option>
+                    <option value="6">6 месяцев</option>
+                    <option value="12">12 месяцев</option>
+                    <option value="18">18 месяцев</option>
+                    <option value="24">24 месяца</option>
+                    <option value="30">30 месяцев</option>
+                    <option value="36">36 месяцев</option>
+                    <option value="42">42 месяца</option>
+                    <option value="48">48 месяцев</option>
+                    <option value="54">54 месяца</option>
+                    <option value="60">60 месяцев</option>
+                </select>
+
+                <label class="form-label" for="stavka">Ставка, % годовых</label>
+                <input class="form-control mb-2" type="number" id="stavka" name="stavka" value="5">
+            </form>
+        </div>
+
+        <div class="col-md-5">
+            <table class="table table-bordered w-auto">
+                <thead>
+                    <tr><th>Было</th><th>Станет</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="mon-before"></td>
+                        <td id="mon-after"></td>
+                    </tr>
+                    <tr>
+                        <td><div class="bar bar-old"></div></td>
+                        <td><div class="bar bar-new" id="gist"></div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="my.js"></script>
+</body>
+</html>
